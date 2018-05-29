@@ -27,14 +27,14 @@ var id = '5b0b6c4cad9abe9864401d6a'
 
 // });
 
-// Todo.findById(id).then((todo)=>{
+Todo.findById(id).then((todo)=>{
 	
-// 	if(!todo){
-// 		return console.log("ID not found")
-// 	}
-// 	console.log('Todo by ID',todo);
+	if(!todo){
+		return console.log("ID not found")
+	}
+	console.log('Todo by ID',todo);
 
-// }).catch((e) => console.log(e));
+}).catch((e) => console.log(e));
 
 User.findById(id).then((user)=>{
 	
