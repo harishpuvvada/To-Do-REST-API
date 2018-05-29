@@ -13,8 +13,6 @@ app.use(bodyParser.json()); //middleware
 
 app.post('/todos',(req,res)=>{
 
-	console.log(req.body);
-
 	var todo = new Todo({
 		text : req.body.text
 	})
