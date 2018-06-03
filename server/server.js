@@ -1,3 +1,5 @@
+require('./config/config');
+
 const _ = require('lodash');
 const express =  require('express');
 const bodyParser = require('body-parser'); //json to Object
@@ -10,9 +12,9 @@ var {authenticate} = require('./middleware/authenticate');
 
 
 var app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
-app.use(bodyParser.json()); //middleware 
+app.use(bodyParser.json()); //middleware
 
 app.post('/todos',(req,res)=>{
 
@@ -55,13 +57,13 @@ app.get('/todos/:id', (req,res)=>{
 		return res.status(404).send();
 	}
 
-	
+
 	Todo.findById(id).then((todo)=>{
-		
+
 		if(!todo){
 			return res.status(404).send();
 		}
-		
+
 		res.status(200).send({todo});
 
 	}).catch((e) => {
@@ -82,13 +84,13 @@ app.delete('/todos/:id',(req,res)=>{
 		return res.status(404).send();
 	}
 
-	
+
 	Todo.findByIdAndRemove(id).then((todo)=>{
-		
+
 		if(!todo){
 			return res.status(404).send();
 		}
-		
+
 		res.status(200).send({todo});
 
 	}).catch((e) => {
@@ -118,7 +120,7 @@ app.patch('/todos/:id',(req,res)=>{
 
 	Todo.findByIdAndUpdate(id, {$set:body}, {new:true})
 	.then((todo)=>{
-	
+
 		if(!todo){
 			return res.status(404).send();
 		}
@@ -128,7 +130,7 @@ app.patch('/todos/:id',(req,res)=>{
 	}).catch((e)=>{
 		res.status(400).send();
 	});
-	
+
 
 });
 
