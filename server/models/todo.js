@@ -21,6 +21,11 @@ var Todo = mongoose.model('Todo',{
 
 		type : Number,
 		default: null
+	},
+
+	_creator :{ //for association betweeen user and todos
+		type: mongoose.Schema.Types.ObjectId,
+		require: true
 	}
 
 });
