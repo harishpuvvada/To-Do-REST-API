@@ -1,12 +1,13 @@
 # To-Do-REST-API
 
 
-Server Side : Node.js, Express.js
+### Server Side
+- Node.js, Express.js
 
-Database : MongoDB
+### Database
+- MongoDB
 
-Testing : Mocha Framework
+### Testing
+- Mocha Framework, postman
 
-You can use postman to access this To-Do REST API
-
-
+You can access this API at https://stark-anchorage-93617.herokuapp.com
