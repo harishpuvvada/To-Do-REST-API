@@ -45,7 +45,6 @@ app.get('/todos', authenticate, (req,res)=>{
 		res.status(400).send(e);
 	});
 
-
 });
 
 
